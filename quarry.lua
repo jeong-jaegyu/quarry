@@ -52,11 +52,9 @@ function out(s)
 end
 
 function dropInChest()
-	print("drop in chest fired") 
  turtle.turnLeft()
  turtle.turnLeft()	
 	local success, data = turtle.inspect()
- sleep(20)
 	print(success)
  print(data)
 	if success then

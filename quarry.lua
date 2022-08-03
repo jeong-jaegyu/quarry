@@ -4,7 +4,7 @@ os.loadAPI("t")
 local x = 0
 local y = 0
 local z = 0
-local max = 16
+local max = 4
 local deep = 64
 local facingfw = true
 
@@ -52,10 +52,13 @@ function out(s)
 end
 
 function dropInChest()
-	turtle.turnLeft()
-	
+	print("drop in chest fired") 
+ turtle.turnLeft()
+ turtle.turnLeft()	
 	local success, data = turtle.inspect()
-	
+ sleep(20)
+	print(success)
+ print(data)
 	if success then
 		if data.name == "minecraft:chest" then
 		
@@ -75,7 +78,8 @@ function dropInChest()
 			end
 		end
 	end
-	
+
+ turtle.turnRight()	
 	turtle.turnRight()
 	
 end
@@ -286,9 +290,9 @@ function mainloop()
 			goUp()
 			return errorcode
 		end
-		
-		goToOrigin()
-		
+		goUp()
+		dropInChest()
+  goDown()
 		for i=1, 3 do
 			t.digDown()
 			success = t.down()
@@ -312,12 +316,9 @@ end
 out("\n\n\n-- WELCOME TO THE MINING TURTLE --\n\n")
 
 while true do
-
-	goDown()
-
+ goDown()
 	local errorcode = mainloop()
 	dropInChest()
-	
 	if errorcode ~= FULLINV then
 		break
 	end

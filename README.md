@@ -1,7 +1,8 @@
 # Main changes:
 * chest to be placed behind the turtle, allowing for flush rows of quarries
-* turtle returns to chest after every layer ( may change this depending on testing )
+* turtle returns to chest after every layer ( may change this depending on testing ) ( after testing probably not. this is still barely enough )
 * ^ prevents the turtle from having to drop its "trash" on the floor. Poor for servers to have 16 + stacks of stuff on the floor * however many turtles are running
+* Fixed stacking for 1.18 (i dont really know how far back the fix goes, but its when they stopped using damage to determine the color of dyes.
 
 # quarry
 Quarry script for ComputerCraft turtles.
